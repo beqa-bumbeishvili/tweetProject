@@ -1,0 +1,51 @@
+﻿@model tweetProject.Models.user
+
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+<h2>UserProfile</h2>
+<div class="container">
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+</div>
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+            var post = $.connection.postHub;
+            var followersIDs = [];
+           $('#message').focus();
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    @{var followers = Model.follows1.Select(e => e.followerID).ToList();} 
+                   @foreach (var item in followers)
+                   {
+                        @:followersIDs.push(@item);
+                    }
+                    $('#displayname').val(@Model.ID);
+                    saveStatusUpdate();
+                    post.server.send($('#displayname').val(), $('#message').val());
+                    $('#message').val('').focus();
+                });
+            });
+            post.client.addNewMessageToPage = function (id, message) {
+               // if (followersIDs.indexOf(id) > 0) {
+               $('#postUpdate').append('<p>' + htmlEncode(id) + ' - ' + htmlEncode(message) + '</p>');
+             //   }
+            };
+        });
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}
+
+
+<div id="postUpdate" style="margin-top:200px; border:5px solid black;">
+
+</div>

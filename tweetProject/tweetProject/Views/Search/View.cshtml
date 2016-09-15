@@ -1,0 +1,26 @@
+﻿@model IEnumerable<tweetProject.Models.user>
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+    $(function () {
+        $('#message').keyup(function () {
+                var input = document.querySelector("#message");
+                var val = input.value;
+                $.post("/Search/Index", { text: val}, function (result) {
+                    if (result) {
+                        $('#texti').text('beqa');
+                    }
+                });
+            });
+          });
+    </script>
+}
+<input type="text" id="message" />
+<button id="searchIt">ghilaki</button>
+
+<p id="texti"></p>

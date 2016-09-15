@@ -1,0 +1,123 @@
+﻿@model tweetProject.Models.user
+
+@{
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+
+<div id="doc" data-at-shortcutkeys="{&quot;Enter&quot;:&quot;Open Tweet details&quot;,&quot;o&quot;:&quot;Expand photo&quot;,&quot;/&quot;:&quot;Search&quot;,&quot;?&quot;:&quot;This menu&quot;,&quot;j&quot;:&quot;Next Tweet&quot;,&quot;k&quot;:&quot;Previous Tweet&quot;,&quot;Space&quot;:&quot;Page down&quot;,&quot;.&quot;:&quot;Load new Tweets&quot;,&quot;gu&quot;:&quot;Go to user\u2026&quot;}" class="route-signup">
+
+
+
+    <div id="page-outer">
+        <div id="page-container" class="AppContent wrapper wrapper-signup">
+            <link href="https://abs.twimg.com/a/1473376351/css/t1/t1_signup.bundle.css" rel="stylesheet">
+            <div class="page-canvas">
+                <div class="signup-wrapper">
+                    <h1>
+                        Join Twitter today.
+                    </h1>
+
+                    <form id="phx-signup-form" method="POST" class="t1-form signup" action="@Url.Action("Post_Registration","Registration")">
+                        <input type="hidden" value="b4bc693bc0d5695534a4abdfc0fcad83f1552dc9" name="authenticity_token">
+
+                        <input type="hidden" name="signup_ui_metrics" autocomplete="off" value="{&quot;rf&quot;:{&quot;afece73c322630ab44a58f56b62f86078d277f2de5f016c41dd44d124d55cc0c&quot;:254,&quot;adc528b4e75ad8ac8f4e211980722c12b8cab3f5f2817a9bbd7f2c9cb51fbe3e&quot;:-8,&quot;e99f2d6dbc89a919fd4df56b451fbc0d11c4c88f21ff2ec0a3a95fc58730e915&quot;:7,&quot;adb89a697a82a7d9c943bdb45cedb45c466ce1e18781962f5b22d4bcde442972&quot;:-2},&quot;s&quot;:&quot;LZ6xcX7-Amke83rHE1I-xar7P8CsXB2ItJYUgIva91e3mEvmdqhXenmSXWtZ9lhPCePsr0S4mkLxPvlZ3UZ4lkorDf3aZQSEGILbuDjD8qt8aMC_5L6gEhPY_fSbyxoO_Glab_EtT-TUGuWLZHsRsGayHv8H88c7GLPCXhp7TN1KqtgSNwTsoTG53XFBt_elORAYTncr7V_RqV-_51COou1ivLh44tKP8RpXJjx0A7P3VHiHNJmsUnRb-UQGOzXDou2j2UMLufTi9uu1raAU8VO8AEuLLnjwx3RgAtbTjuIhHYlx_lEChEl-JNGX3zT5eDisVlkAxWAnxw2xPOfppwAAAVcU-SWX&quot;,&quot;h&quot;:&quot;jdWIlY+clZON3TpaIHRtYWNxYWdvaGhgb2txYWZ2Zjtye3Q7NjlxdXR5QkxGREdDTEVKWUtOQ0dBSV9ZXVZSUl9SUFNbUh4RHE8lMSQvJTYuNyQoMy4+fnwQYmMNYwtlCWVoYHQ/MDF8c0IIDBcBFwgGBEQaDwpAGAYVBhcBVihaVQsaCB4ZE1xF+6Ph7Ojq9MPt+f7jrre8u7yz+vb98v7juqOtraSxvOjJxdbLhp+XlJ6f14eOw8/ZkovJkdjU2NDN2N3enoec2q7sl5Dm6eS3pKi+raO/o+3q84W6uubk9fT7qqmzuau8lMPYwaOAhYyHy5fHzpqHgZSehdHOjtSEnYqJkpOTrYtvc2NkYSc8fCpaaXllb2tbYnB8YGR6ZGM6IzhgQD93cVREUE1FSXlVTU9PWUlfcg0KX0dfWBlqFVtVU15SSWFJJTMxKisrGmVyFWgmLS4vOH0iJToyIQp1dAV4Li84LAAJBT5BXlVKO0oKBQUYCBYbLFNIL1YWGRkMHAIPIF9SI6Lk9Obq8dnp6eTv+Pzs7erMs6joyLf1+/H89O/Av6TDgtbHwfiHivuK2cvMyfGMleyTwdrT28PH5JuW557O29y0qK2tmOf8m+qvpbmhkezjjPOxvLmlubm9t66H/ueC/YqAlIKXhpSOmJ22ycCxzI6ThZucmqnUzaTbk5aMj5uMc2htbVgneytUK355ZWppamJ0dkx7e0o1IiguLC8oLCoWFBYWFBEKewpPRVlBTFpwRlRAQF1aWGsaAwgXYB9hXCE1JyQrNz8YFGtwF24uIiY1PyYMMSMzOSwFeCZwJgJ9CQ8WBhYLBws3Gw8NCR8LHSxTSB0BGRpbJFsZFxUYEAvf9+fx9+zp6dSrsNeu4O/s8ea/4OP88OPEu7bHvujt+tL+y8f4h5yXhPWIyMPD2srIxe6RjumU1NfXzt7EyeKd7J3gprKgqLOXp6umqb6+rrO0jvHuror1u7WzvrKpgv3avcCUgYe6xcS1yJuNiouz0suu0YeckZmNiabZ0KHcjGVidmpra1olMlUobWN/Y1MyPU4xd3p7Z3d3f3VoQTwlfANSRlZWSUlJRUNRTVlHQF5tEB9oF1NbXVRfVUhhHAUcYyErISYtJScxFmlgEWwuMyU7PDoJdG0EezU1AH8jczxDFhENAgECGgwONAMDMk1KQEZER0BEQk5MTk5MRFIjouft8enk8tj+7Pj45eLg07KroL/It8n0+e3//PPv58D8g5j/hsbKzs3H3vTJ28vBxO2QzpjO6pXR187eztPf05+zp6Wht6O1lOvwpbmhouOM87G/vbC4o4evv6mvtLGxvMPYv8aIh4SJnseYm4SIm6zT3q/WgIWSiqaTn6DfxM8sXSBmcmBoc1dna2Zpfn5uc3ROMS5uSjV7dXN+cmlCPRp9AFRBR3oFBHUIW01KS3MSC24RR1xRWU1JZhkQYRxMJSI2KisrGmVyFWgtIz8jE3J9DnE1NiI+NzcGeWYBfCwIDhU/RhhKO0odGAILCgsdFRUtHBopVE1JTU1ISU9LSbW1t7K1qdql7ub45u350fn14+H6+/vKtaKrtse+wv3+1MTFzNbc+fuKk/aJz8HHyt7F7dbC0NjD5JvHmcGRnNaupae7oaGCherzsbaxsA==&quot;}">
+                        <input type="hidden" name="m_metrics" autocomplete="off" value="ghegCmUBTxwAbBdNClUAXRwARxcAC7YAbh0AGxf3C/oAeR0A0hYqDjcCjh0AwxYiD/gAmx0AphZ+EVwCrR0AphZtE+8Bwx0AphZNFeAB0R0AtRbkFZcA4x0AwxZSFm4A8B0AwxZgFg4Ayx4AwxZuFg4A1R4AwxZ7Fg0Aax8AwxaJFg4Azx8AwxaXFg4ADSAAwxalFg4AISAAvBalFgcASCAAvBayFg0AwSAAYQfoCKMUgrUA:gA+XAIIPmQQAvBetFQgP0BIA2RctFBsA5hsAwxaJFg4Azx8AYQfoCKMUgrUA">
+                        <input type="hidden" name="d_metrics" autocomplete="off" value="AABQRigjEgAA:">
+                        <script src="/i/js_inst?c_name=signup_ui_metrics&amp;mm_name=m_metrics&amp;dm_name=d_metrics" async=""></script>
+
+
+                        <div class="textbox">
+
+
+                            <div class="prompt email">
+                                <div class="field" data-fieldname="email">
+                                    <div class="sidetip">
+                                        <p class="ok isaok">&nbsp;</p>
+                                        <p class="checking">Validating...</p>
+                                        <p class="invalid error" role="alert">Please enter a valid email.</p>
+                                        <p class="invalid_phone error" role="alert">Please enter a valid phone number.</p>
+                                        <p class="blank error" role="alert">Please enter a valid phone number or email.</p>
+                                        <p class="taken error " role="alert">This email is already registered. Want to <a href="/login">login</a> or <a href="/account/begin_password_reset">recover your password</a>?</p>
+                                        <p class="phone_taken error" role="alert">We cannot currently register this phone number. Please try signing up with email instead.</p>
+                                        <p class="domain">Did you mean <em><a role="button" class="js-email-correction" href="#"></a></em>?</p>
+                                    </div>
+                                    <input id="email" class="email-input" type="text" autocomplete="off" value="" name="email" aria-required="true" placeholder="Email">
+                                </div>
+                            </div>
+
+
+
+                            <div class="prompt password">
+                                <div class="field" data-fieldname="password">
+                                    <div class="sidetip">
+                                        <p class="ok isaok perfect weak">&nbsp;</p>
+                                        <p class="weak error" role="alert">Please enter a stronger password.</p>
+                                        <p class="obvious error" role="alert">Please enter a stronger password.</p>
+                                        <p class="invalid error" role="alert">Your password must be at least 6 characters.</p>
+                                        <p class="blank error" role="alert">Please enter a password.</p>
+                                    </div>
+                                    <input id="password" type="password" value="" name="pass" aria-required="true" placeholder="Password">
+                                </div>
+                                <div class="score"><span><b class="fill"></b></span></div>
+                            </div>
+
+
+                            <div class="prompt password">
+                                <div class="field" data-fieldname="password">
+                                    <div class="sidetip">
+                                        <p class="ok isaok perfect weak">&nbsp;</p>
+                                        <p class="weak error" role="alert">Please enter a stronger password.</p>
+                                        <p class="obvious error" role="alert">Please enter a stronger password.</p>
+                                        <p class="invalid error" role="alert">Your password must be at least 6 characters.</p>
+                                        <p class="blank error" role="alert">Please enter a password.</p>
+                                    </div>
+                                    <input id="password" type="password" value="" name="user[user_password]" aria-required="true" placeholder="Repeat Password">
+                                </div>
+                                <div class="score"><span><b class="fill"></b></span></div>
+                            </div>
+
+                            <div class="prompt name">
+                                <div class="field" data-fieldname="name">
+                                    <div class="sidetip">
+                                        <p class="ok isaok">&nbsp;</p>
+                                        <p class="blank invalid error" role="alert">What's your name?</p>
+                                        <p class="notwitter error" role="alert">Your full name can't include the word "Twitter".</p>
+                                    </div>
+                                    <input id="full-name" type="text" autocomplete="off" value="" name="name" maxlength="20" aria-required="true" placeholder="Name" class="">
+                                </div>
+                            </div>
+
+
+                            <div class="prompt name">
+                                <div class="field" data-fieldname="name">
+                                    <div class="sidetip">
+                                        <p class="ok isaok">&nbsp;</p>
+                                        <p class="blank invalid error" role="alert">What's your name?</p>
+                                        <p class="notwitter error" role="alert">Your full name can't include the word "Twitter".</p>
+                                    </div>
+                                    <input id="full-name" type="text" autocomplete="off" value="" name="lastname" maxlength="20" aria-required="true" placeholder="Lastname" class="">
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="ad_ref" value="">
+                        </div>
+
+                        <div class="standby">
+                            <p>Creating your account…</p>
+                        </div>
+
+                        <div class="doit">
+                            <div class="sign-up-box" style="background:transparent;">
+                                <input class="submit button signup" style="margin-left:26%;" type="submit" id="submit_button" value="Sign up">
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
